@@ -114,6 +114,7 @@
                                 ("png" . "nsxiv")
                                 ("mkv" . "mpv")
                                 ("mp4" . "mpv")
+                                ("webm" . "mpv")
                                 ("mp3" . "mpv --no-video"))))
 
 (use-package evil
