@@ -28,7 +28,7 @@
 (setq display-line-numbers-type 'relative)
 
 ;; Disable line numbers for some modes
-(dolist (hook '(org-mode-hook pdf-view-mode term-mode-hook vterm-mode-hook shell-mode-hook eshell-mode-hook))
+(dolist (hook '(org-mode-hook pdf-view-mode-hook term-mode-hook vterm-mode-hook shell-mode-hook eshell-mode-hook))
   (add-hook hook (lambda () (display-line-numbers-mode -1))))
 
 ;; Let the desktop background show through
