@@ -278,6 +278,32 @@
     (counsel-mode)
     (setq ivy-initial-inputs-alist nil))
 
+(use-package ivy
+  :bind
+  ;; ivy-resume resumes the last Ivy-based completion.
+  (("C-c C-r" . ivy-resume)
+   ("C-x B" . ivy-switch-buffer-other-window))
+  :diminish
+  :custom
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq enable-recursive-minibuffers t)
+  :config
+  (ivy-mode))
+
+(use-package nerd-icons-ivy-rich
+  :ensure t
+  :init (nerd-icons-ivy-rich-mode 1))
+
+(use-package ivy-rich
+  :after ivy
+  :ensure t
+  :init (ivy-rich-mode 1) ;; this gets us descriptions in M-x.
+  :custom
+  (ivy-virtual-abbreviate 'full
+   ivy-rich-switch-buffer-align-virtual-buffer t
+   ivy-rich-path-style 'abbrev))
+
 (use-package diminish)
 
 (use-package fzf)
@@ -362,12 +388,15 @@
      "77f281064ea1c8b14938866e21c4e51e4168e05db98863bd7430f1352cab294a"
      default))
  '(package-selected-packages
-   '(company-box counsel dashboard diminish dired-open doom-modeline
-		 doom-themes evil-collection flycheck fzf general
-		 gotham-theme hl-todo lsp-ui magit nerd-icons-dired
-		 org-bullets org-present pdf-tools python-mode
-		 rainbow-delimiters rainbow-mode tron-legacy-theme
-		 visual-fill-column vterm-toggle)))
+   '(nerd-icons-ivy-rich company-box counsel dashboard diminish
+			    dired-open doom-modeline doom-themes
+			    evil-collection flycheck fzf general
+			    gotham-theme hl-todo lsp-ui magit
+			    nerd-icons-dired nerd-icons-ivy-rich
+			    org-bullets org-present pdf-tools
+			    python-mode rainbow-delimiters
+			    rainbow-mode tron-legacy-theme
+			    visual-fill-column vterm-toggle)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
