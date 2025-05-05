@@ -7,12 +7,14 @@
 (defun c0/org-present-start ()
   (visual-fill-column-mode 1)
   (visual-line-mode 1)
+  (global-hl-line-mode 0)
   (load-theme 'doom-palenight t))
 
 (defun c0/org-present-end ()
   (visual-fill-column-mode 0)
   (visual-line-mode 0)
-  (load-theme 'gotham t))
+  (global-hl-line-mode 1)
+  (load-theme 'tron-legacy t))
 
 (set-face-attribute 'default nil :height 135)
 (setq inhibit-startup-message t)
