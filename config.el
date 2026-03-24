@@ -5,3 +5,5 @@
 (scroll-bar-mode -1)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
