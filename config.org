@@ -1,0 +1,3 @@
+#+title: C0pt4n GNU Emacs Config
+#+author: c0pt4n
+#+description: Just a vanilla emacs config
