@@ -67,6 +67,10 @@
     :global-prefix "M-SPC") ;; access leader in insert mode
 
   (me/leader-keys
+    "SPC" '(counsel-M-x :wk "Counsel M-x")
+    "." '(find-file :wk "Find file"))
+
+  (me/leader-keys
     "b" '(:ignore t :wk "Buffers")
     "b b" '(switch-to-buffer :wk "Switch buffer")
     "b k" '(kill-current-buffer :wk "Kill this buffer")
@@ -158,6 +162,42 @@
   :straight t
   :commands toc-org-enable
   :hook (org-mode-hook . toc-org-enable))
+
+(use-package ivy
+  :straight t
+  :bind
+  ;; ivy-resume resumes the last Ivy-based completion.
+  (("C-c C-r" . ivy-resume)
+   ("C-x B" . ivy-switch-buffer-other-window))
+  :custom
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq enable-recursive-minibuffers t)
+  :config
+  (ivy-mode))
+
+(use-package nerd-icons-ivy-rich
+  :straight t
+  :init (nerd-icons-ivy-rich-mode 1))
+
+(use-package counsel
+  :straight t
+  :after ivy
+  :config 
+    (counsel-mode)
+    (setq ivy-initial-inputs-alist nil)) ;; removes starting ^ regex in M-x
+
+(use-package ivy-rich
+  :after ivy
+  :straight t
+  :init (ivy-rich-mode 1) ;; this gets us descriptions in M-x.
+  :custom
+  (ivy-virtual-abbreviate 'full
+   ivy-rich-switch-buffer-align-virtual-buffer t
+   ivy-rich-path-style 'abbrev)
+  :config
+  (ivy-set-display-transformer 'ivy-switch-buffer
+                               'ivy-rich-switch-buffer-transformer))
 
 (use-package pdf-tools
   :straight t
