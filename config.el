@@ -69,6 +69,10 @@
   :init
   (load-theme 'nord t))
 
+(use-package org-bullets
+  :straight t
+  :hook (org-mode . org-bullets-mode))
+
 (require 'org-tempo)
 
 (electric-pair-mode 1)

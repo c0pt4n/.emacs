@@ -96,6 +96,13 @@ Bootstrap straight package manager, which I will use to install required package
 #+end_src
 
 * ORG
+** ORG BULLETS
+#+begin_src emacs-lisp
+(use-package org-bullets
+  :straight t
+  :hook (org-mode . org-bullets-mode))
+#+end_src
+
 ** ORG TEMPO
 #+begin_src emacs-lisp
 (require 'org-tempo)
