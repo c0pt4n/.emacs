@@ -18,6 +18,7 @@
   - [[#org-bullets][ORG BULLETS]]
   - [[#org-tempo][ORG TEMPO]]
   - [[#toc-org][Toc-Org]]
+- [[#pdf][PDF]]
 - [[#sane-defaults][SANE DEFAULTS]]
 
 * IMPORTANT PROGRAMS TO LOAD FIRSTLY
@@ -211,6 +212,24 @@ Bootstrap straight package manager, which I will use to install required package
   :straight t
   :commands toc-org-enable
   :hook (org-mode-hook . toc-org-enable))
+#+end_src
+
+* PDF
+#+begin_src emacs-lisp
+(use-package pdf-tools
+  :straight t
+  :commands (pdf-loader-install)
+  :mode "\\.pdf\\'"
+  :bind (:map pdf-view-mode-map
+              ("j" . pdf-view-next-line-or-next-page)
+              ("k" . pdf-view-previous-line-or-previous-page)
+              ("C-=" . pdf-view-enlarge)
+              ("C--" . pdf-view-shrink))
+  :init (pdf-loader-install)
+  :config (add-to-list 'revert-without-query ".pdf"))
+
+(add-hook 'pdf-view-mode-hook #'(lambda () (interactive) (display-line-numbers-mode -1)
+                                                         (blink-cursor-mode -1)))
 #+end_src
 
 * SANE DEFAULTS
