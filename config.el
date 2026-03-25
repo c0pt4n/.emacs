@@ -84,6 +84,14 @@
 	    :wk "Open user-emacs-directory in dired"))
   )
 
+(use-package nerd-icons
+  :straight t
+  :if (display-graphic-p))
+
+(use-package nerd-icons-dired
+  :straight t
+  :hook (dired-mode . (lambda () (nerd-icons-dired-mode t))))
+
 (set-face-attribute 'default nil
   :font "IBM Plex Mono"
   :height 120

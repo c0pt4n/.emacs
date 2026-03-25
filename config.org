@@ -9,6 +9,7 @@
   - [[#straight-package-manager][Straight Package Manager]]
   - [[#load-evil-mode][Load Evil Mode]]
   - [[#general-keybindings][General Keybindings]]
+- [[#nerd-icons][NERD ICONS]]
 - [[#fonts][FONTS]]
   - [[#zooming-inout][ZOOMING IN/OUT]]
 - [[#dashboard][Dashboard]]
@@ -119,6 +120,17 @@ Bootstrap straight package manager, which I will use to install required package
 	      (dired user-emacs-directory))
 	    :wk "Open user-emacs-directory in dired"))
   )
+#+end_src
+
+* NERD ICONS
+#+begin_src emacs-lisp
+(use-package nerd-icons
+  :straight t
+  :if (display-graphic-p))
+
+(use-package nerd-icons-dired
+  :straight t
+  :hook (dired-mode . (lambda () (nerd-icons-dired-mode t))))
 #+end_src
 
 * FONTS
