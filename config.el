@@ -42,6 +42,49 @@
   ;; Enable use-package :ensure support for Elpaca.
   (elpaca-use-package-mode))
 
+;; Expands to: (elpaca evil (use-package evil :demand t))
+(use-package evil
+    :ensure t
+    :demand t
+    :init
+    (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+    (setq evil-want-keybinding nil)
+    (setq evil-default-cursor 'box)
+    (setq evil-normal-state-cursor 'box)
+    (setq evil-insert-state-cursor 'box)
+    (setq evil-visual-state-cursor 'box)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (setq select-enable-clipboard nil)
+    (setq select-enable-primary nil)
+    :config
+    (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
+    (evil-mode 1))
+  (use-package evil-collection
+    :ensure t
+    :after evil
+    :config
+    (setq evil-collection-mode-list '(dashboard dired ibuffer))
+    (evil-collection-init))
+  (use-package evil-tutor :ensure t)
+
+;;Turns off elpaca-use-package-mode current declaration
+;;Note this will cause evaluate the declaration immediately. It is not deferred.
+;;Useful for configuring built-in emacs features.
+(use-package emacs :ensure nil :config (setq ring-bell-function #'ignore))
+
+(use-package general
+  :ensure t
+  :config
+  (general-evil-setup)
+
+  ;; set up 'SPC' as the global leader key
+  (general-create-definer dt/leader-keys
+    :states '(normal insert visual emacs)
+    :keymaps 'override
+    :prefix "SPC" ;; set leader
+    :global-prefix "M-SPC")) ;; access leader in insert mode
+
 (electric-pair-mode 1)
 (setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
 (menu-bar-mode -1)
