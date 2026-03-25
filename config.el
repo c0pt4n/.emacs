@@ -59,7 +59,7 @@
   (me/leader-keys
     "b" '(:ignore t :wk "buffer")
     "bb" '(switch-to-buffer :wk "Switch buffer")
-    "bk" '(kill-this-buffer :wk "Kill this buffer")
+    "bk" '(kill-current-buffer :wk "Kill this buffer")
     "bn" '(next-buffer :wk "Next buffer")
     "bp" '(previous-buffer :wk "Previous buffer")
     "br" '(revert-buffer :wk "Previous buffer"))
