@@ -125,6 +125,11 @@
 
 (require 'org-tempo)
 
+(use-package toc-org
+  :straight t
+  :commands toc-org-enable
+  :hook (org-mode-hook . toc-org-enable))
+
 (electric-pair-mode 1)
 (setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
 (when (display-graphic-p)

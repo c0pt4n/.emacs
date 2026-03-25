@@ -4,6 +4,21 @@
 #+startup: showeverything
 #+options: toc:2
 
+* Table of Contents :toc:
+- [[#important-programs-to-load-firstly][IMPORTANT PROGRAMS TO LOAD FIRSTLY]]
+  - [[#straight-package-manager][Straight Package Manager]]
+  - [[#load-evil-mode][Load Evil Mode]]
+  - [[#general-keybindings][General Keybindings]]
+- [[#fonts][FONTS]]
+  - [[#zooming-inout][ZOOMING IN/OUT]]
+- [[#dashboard][Dashboard]]
+- [[#theme][THEME]]
+- [[#org][ORG]]
+  - [[#org-bullets][ORG BULLETS]]
+  - [[#org-tempo][ORG TEMPO]]
+  - [[#toc-org][Toc-Org]]
+- [[#sane-defaults][SANE DEFAULTS]]
+
 * IMPORTANT PROGRAMS TO LOAD FIRSTLY
 ** Straight Package Manager
 Bootstrap straight package manager, which I will use to install required packages
@@ -165,6 +180,14 @@ Bootstrap straight package manager, which I will use to install required package
 ** ORG TEMPO
 #+begin_src emacs-lisp
 (require 'org-tempo)
+#+end_src
+
+** Toc-Org
+#+begin_src emacs-lisp
+(use-package toc-org
+  :straight t
+  :commands toc-org-enable
+  :hook (org-mode-hook . toc-org-enable))
 #+end_src
 
 * SANE DEFAULTS
