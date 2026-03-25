@@ -47,7 +47,6 @@ Bootstrap straight package manager, which I will use to install required package
 ** Load Evil Mode
 
 #+begin_src emacs-lisp
-;; Expands to: (elpaca evil (use-package evil :demand t))
 (use-package evil
   :straight t
   :init

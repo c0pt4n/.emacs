@@ -16,7 +16,6 @@
 
 (straight-use-package 'use-package)
 
-;; Expands to: (elpaca evil (use-package evil :demand t))
 (use-package evil
   :straight t
   :init
