@@ -77,13 +77,22 @@
   :ensure t
   :config
   (general-evil-setup)
-
+  
   ;; set up 'SPC' as the global leader key
-  (general-create-definer dt/leader-keys
+  (general-create-definer me/leader-keys
     :states '(normal insert visual emacs)
     :keymaps 'override
     :prefix "SPC" ;; set leader
-    :global-prefix "M-SPC")) ;; access leader in insert mode
+    :global-prefix "M-SPC") ;; access leader in insert mode
+
+  (me/leader-keys
+    "b" '(:ignore t :wk "buffer")
+    "bb" '(switch-to-buffer :wk "Switch buffer")
+    "bk" '(kill-this-buffer :wk "Kill this buffer")
+    "bn" '(next-buffer :wk "Next buffer")
+    "bp" '(previous-buffer :wk "Previous buffer")
+    "br" '(revert-buffer :wk "Previous buffer"))
+  )
 
 (electric-pair-mode 1)
 (setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
