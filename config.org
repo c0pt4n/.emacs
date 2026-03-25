@@ -14,6 +14,7 @@
 - [[#dashboard][Dashboard]]
 - [[#theme][THEME]]
 - [[#org][ORG]]
+  - [[#general-org-settings][General Org Settings]]
   - [[#org-bullets][ORG BULLETS]]
   - [[#org-tempo][ORG TEMPO]]
   - [[#toc-org][Toc-Org]]
@@ -170,6 +171,11 @@ Bootstrap straight package manager, which I will use to install required package
 #+end_src
 
 * ORG
+** General Org Settings
+#+begin_src emacs-lisp
+(setq org-directory "~/docs/notes/org")
+#+end_src
+
 ** ORG BULLETS
 #+begin_src emacs-lisp
 (use-package org-bullets

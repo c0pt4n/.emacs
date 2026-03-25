@@ -119,6 +119,8 @@
   :init
   (load-theme 'nord t))
 
+(setq org-directory "~/docs/notes/org")
+
 (use-package org-bullets
   :straight t
   :hook (org-mode . org-bullets-mode))
