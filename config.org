@@ -114,6 +114,17 @@ Bootstrap Elpaca package manager, which I will use to install required packages
   )
 #+end_src
 
+* THEME
+
+[[https://github.com/nordtheme/emacs][Nord Theme]]
+
+#+begin_src emacs-lisp
+(use-package nord-theme
+  :ensure t
+  :init
+  (load-theme 'nord t))
+#+end_src
+
 * SANE DEFAULTS
 
 #+begin_src emacs-lisp

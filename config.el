@@ -94,6 +94,11 @@
     "br" '(revert-buffer :wk "Previous buffer"))
   )
 
+(use-package nord-theme
+  :ensure t
+  :init
+  (load-theme 'nord t))
+
 (electric-pair-mode 1)
 (setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
 (menu-bar-mode -1)
