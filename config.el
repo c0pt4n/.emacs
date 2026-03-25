@@ -28,6 +28,8 @@
     (setq evil-visual-state-cursor 'box)
     (setq evil-vsplit-window-right t)
     (setq evil-split-window-below t)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-d-scroll t)
     (setq select-enable-clipboard nil)
     (setq select-enable-primary nil)
     :config
