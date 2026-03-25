@@ -91,12 +91,18 @@ Bootstrap straight package manager, which I will use to install required package
     :global-prefix "M-SPC") ;; access leader in insert mode
 
   (me/leader-keys
-    "b" '(:ignore t :wk "buffer")
+    "b" '(:ignore t :wk "Buffers")
     "b b" '(switch-to-buffer :wk "Switch buffer")
     "b k" '(kill-current-buffer :wk "Kill this buffer")
     "b n" '(next-buffer :wk "Next buffer")
     "b p" '(previous-buffer :wk "Previous buffer")
     "b r" '(revert-buffer :wk "Previous buffer"))
+
+  (me/leader-keys
+    "f" '(:ignore t :wk "Files")
+    "f c" '((lambda() (interactive)
+	      (find-file "~/.config/emacs/config.org"))
+	    :wk "Open emacs config.org"))
   )
 #+end_src
 
