@@ -33,6 +33,8 @@
   (setq select-enable-primary nil)
   (setq evil-undo-system 'undo-redo)
   :config
+  (evil-define-key 'visual global-map (kbd "SPC y") 'clipboard-kill-ring-save)
+  (evil-define-key 'visual global-map (kbd "SPC d") 'cliboard-kill-region)
   (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
   (evil-mode 1))
 (use-package evil-collection
@@ -43,7 +45,7 @@
   (evil-collection-init))
 (use-package evil-tutor :straight t)
 
-;; Using RETURN to follow links in Org/Evil 
+;; Using RETURN to follow links in Org/Evil
 ;; Unmap keys in 'evil-maps if not done, (setq org-return-follows-link t) will not work
 (with-eval-after-load 'evil-maps
   (define-key evil-motion-state-map (kbd "SPC") nil)
@@ -56,7 +58,7 @@
   :straight t
   :config
   (general-evil-setup)
-  
+
   ;; set up 'SPC' as the global leader key
   (general-create-definer me/leader-keys
     :states '(normal insert visual emacs)
