@@ -78,6 +78,7 @@
 (menu-bar-mode -1)
 (blink-cursor-mode -1)
 (global-display-line-numbers-mode)
+(setq scroll-margin 8)
 (setq display-line-numbers-type 'relative)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
