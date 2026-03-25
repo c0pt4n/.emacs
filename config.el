@@ -64,7 +64,7 @@
     :ensure t
     :after evil
     :config
-    (setq evil-collection-mode-list '(dashboard dired ibuffer))
+    (add-to-list 'evil-collection-mode-list 'help) ;; evilify help mode
     (evil-collection-init))
   (use-package evil-tutor :ensure t)
 
