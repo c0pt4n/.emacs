@@ -74,6 +74,7 @@
   (scroll-bar-mode -1)
   )
 (menu-bar-mode -1)
+(blink-cursor-mode -1)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 (setq make-backup-files nil)
