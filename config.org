@@ -125,6 +125,24 @@ Bootstrap straight package manager, which I will use to install required package
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
 #+end_src
 
+* Dashboard
+#+begin_src emacs-lisp
+(use-package dashboard
+  :straight t
+  :init
+   (setq initial-buffer-choice 'dashboard-open)
+   (setq doom-fallback-buffer-name "*dashboard*")
+   (add-hook 'doom-enter-frame-hook #'dashboard-open)
+   (setq dashboard-startup-banner 'logo)
+   (setq dashboard-banner-logo-title "Greetings, hack!")
+   (setq dashboard-set-heading-icons t)
+   (setq dashboard-footer-icon "☠")
+   (setq dashboard-footer-messages '("Eat, Sleep, Hack, Repeat..."))
+   (setq initial-scratch-message nil)
+  :config
+   (dashboard-setup-startup-hook))
+#+end_src
+
 * THEME
 
 [[https://github.com/nordtheme/emacs][Nord Theme]]
