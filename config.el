@@ -66,8 +66,11 @@
   (me/leader-keys
     "f" '(:ignore t :wk "Files")
     "f c" '((lambda() (interactive)
-	      (find-file "~/.config/emacs/config.org"))
-	    :wk "Open emacs config.org"))
+	      (find-file (expand-file-name "config.org" user-emacs-directory)))
+	    :wk "Open emacs config.org")
+    "f e" '((lambda() (interactive)
+	      (dired user-emacs-directory))
+	    :wk "Open user-emacs-directory in dired"))
   )
 
 (set-face-attribute 'default nil
