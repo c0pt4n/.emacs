@@ -33,30 +33,31 @@ Bootstrap straight package manager, which I will use to install required package
 #+begin_src emacs-lisp
 ;; Expands to: (elpaca evil (use-package evil :demand t))
 (use-package evil
-    :straight t
-    :init
-    (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
-    (setq evil-want-keybinding nil)
-    (setq evil-default-cursor 'box)
-    (setq evil-normal-state-cursor 'box)
-    (setq evil-insert-state-cursor 'box)
-    (setq evil-visual-state-cursor 'box)
-    (setq evil-vsplit-window-right t)
-    (setq evil-split-window-below t)
-    (setq evil-want-C-u-scroll t)
-    (setq evil-want-C-d-scroll t)
-    (setq select-enable-clipboard nil)
-    (setq select-enable-primary nil)
-    :config
-    (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
-    (evil-mode 1))
-  (use-package evil-collection
-    :straight t
-    :after evil
-    :config
-    (add-to-list 'evil-collection-mode-list 'help) ;; evilify help mode
-    (evil-collection-init))
-  (use-package evil-tutor :straight t)
+  :straight t
+  :init
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  (setq evil-default-cursor 'box)
+  (setq evil-normal-state-cursor 'box)
+  (setq evil-insert-state-cursor 'box)
+  (setq evil-visual-state-cursor 'box)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-d-scroll t)
+  (setq select-enable-clipboard nil)
+  (setq select-enable-primary nil)
+  (setq evil-undo-system 'undo-redo)
+  :config
+  (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
+  (evil-mode 1))
+(use-package evil-collection
+  :straight t
+  :after evil
+  :config
+  (add-to-list 'evil-collection-mode-list 'help) ;; evilify help mode
+  (evil-collection-init))
+(use-package evil-tutor :straight t)
 #+end_src
 
 ** General Keybindings
