@@ -69,6 +69,8 @@
   :init
   (load-theme 'nord t))
 
+(require 'org-tempo)
+
 (electric-pair-mode 1)
 (setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
 (when (display-graphic-p)

@@ -95,6 +95,12 @@ Bootstrap straight package manager, which I will use to install required package
   (load-theme 'nord t))
 #+end_src
 
+* ORG
+** ORG TEMPO
+#+begin_src emacs-lisp
+(require 'org-tempo)
+#+end_src
+
 * SANE DEFAULTS
 
 #+begin_src emacs-lisp
