@@ -74,9 +74,10 @@
     "b" '(:ignore t :wk "Buffers")
     "b b" '(switch-to-buffer :wk "Switch buffer")
     "b k" '(kill-current-buffer :wk "Kill this buffer")
+    "b K" '(kill-some-buffer :wk "Kill multiple buffer")
     "b n" '(next-buffer :wk "Next buffer")
     "b p" '(previous-buffer :wk "Previous buffer")
-    "b r" '(revert-buffer :wk "Previous buffer"))
+    "b r" '(revert-buffer :wk "Reload buffer"))
 
   (me/leader-keys
     "f" '(:ignore t :wk "Files")
@@ -87,6 +88,10 @@
 	      (dired user-emacs-directory))
 	    :wk "Open user-emacs-directory in dired")
     "f r" '(counsel-recentf :wk "Find recent files"))
+
+  (me/leader-keys
+    "d" '(:ignore t :wk "Dired")
+    "d d" '(dired :wk "Open dired"))
   )
 
 (use-package nerd-icons
