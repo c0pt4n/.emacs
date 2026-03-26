@@ -123,7 +123,8 @@ Bootstrap straight package manager, which I will use to install required package
 	    :wk "Open emacs config.org")
     "f e" '((lambda() (interactive)
 	      (dired user-emacs-directory))
-	    :wk "Open user-emacs-directory in dired"))
+	    :wk "Open user-emacs-directory in dired")
+    "f r" '(counsel-recentf :wk "Find recent files"))
   )
 #+end_src
 

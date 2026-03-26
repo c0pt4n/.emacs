@@ -85,7 +85,8 @@
 	    :wk "Open emacs config.org")
     "f e" '((lambda() (interactive)
 	      (dired user-emacs-directory))
-	    :wk "Open user-emacs-directory in dired"))
+	    :wk "Open user-emacs-directory in dired")
+    "f r" '(counsel-recentf :wk "Find recent files"))
   )
 
 (use-package nerd-icons
