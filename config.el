@@ -80,6 +80,10 @@
     "b r" '(revert-buffer :wk "Reload buffer"))
 
   (me/leader-keys
+    "d" '(:ignore t :wk "Dired")
+    "d d" '(dired :wk "Open dired"))
+
+  (me/leader-keys
     "f" '(:ignore t :wk "Files")
     "f c" '((lambda() (interactive)
 	      (find-file (expand-file-name "config.org" user-emacs-directory)))
@@ -90,8 +94,15 @@
     "f r" '(counsel-recentf :wk "Find recent files"))
 
   (me/leader-keys
-    "d" '(:ignore t :wk "Dired")
-    "d d" '(dired :wk "Open dired"))
+    "w" '(:ignore t :wk "Window")
+    "w s" '(evil-window-split :wk "Horizontal split")
+    "w v" '(evil-window-vsplit :wk "Vertical split")
+    "w h" '(evil-window-left :wk "Window left")
+    "w l" '(evil-window-right :wk "Window right")
+    "w k" '(evil-window-up :wk "Window up")
+    "w j" '(evil-window-down :wk "Window down")
+    "w c" '(evil-window-delete :wk "Close window")
+    "w n" '(evil-window-new :wk "New window"))
   )
 
 (use-package nerd-icons
