@@ -145,10 +145,12 @@
   :config
    (dashboard-setup-startup-hook))
 
-(use-package nord-theme
+(use-package nord-theme :straight t)
+
+(use-package tron-legacy-theme
   :straight t
   :init
-  (load-theme 'nord t))
+  (load-theme 'tron-legacy t))
 
 (setq org-directory "~/docs/notes/org")
 

@@ -201,10 +201,12 @@ Bootstrap straight package manager, which I will use to install required package
 [[https://github.com/nordtheme/emacs][Nord Theme]]
 
 #+begin_src emacs-lisp
-(use-package nord-theme
+(use-package nord-theme :straight t)
+
+(use-package tron-legacy-theme
   :straight t
   :init
-  (load-theme 'nord t))
+  (load-theme 'tron-legacy t))
 #+end_src
 
 * ORG
