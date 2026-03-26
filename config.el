@@ -186,7 +186,7 @@
 (use-package counsel
   :straight t
   :after ivy
-  :config 
+  :config
     (counsel-mode)
     (setq ivy-initial-inputs-alist nil)) ;; removes starting ^ regex in M-x
 
@@ -225,10 +225,8 @@
                    `(lambda (c)
                   (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 (setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
-(when (display-graphic-p)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1)
-  )
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 (menu-bar-mode -1)
 (blink-cursor-mode -1)
 (global-display-line-numbers-mode)
