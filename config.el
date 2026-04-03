@@ -63,7 +63,8 @@
       display-line-numbers-type 'relative
       make-backup-files nil
       auto-save-default nil
-      org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
+      org-edit-src-content-indentation 0 ;; Set src block automatic indent to 0 instead of 2.
+      native-comp-async-report-warnings-errors 'silent) ;; Native Comp
 
 (use-package evil
   :demand t
