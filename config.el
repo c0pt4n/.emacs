@@ -1,0 +1,10 @@
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+(blink-cursor-mode -1)
+(global-display-line-numbers-mode)
+(setq scroll-margin 8
+      display-line-numbers-type 'relative
+      make-backup-files nil
+      auto-save-default nil
+      org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
