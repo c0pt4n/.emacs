@@ -16,7 +16,7 @@
   - [[#org-bullets][ORG BULLETS]]
   - [[#org-tempo][ORG TEMPO]]
   - [[#toc-org][Toc-ORG]]
-- [[#highlight-todo][HIGHLIGHT TODO]]
+  - [[#highlight-todo][Highlight TODO]]
 
 * Elpaca Package Manager
 #+begin_src emacs-lisp
@@ -283,7 +283,7 @@
   :hook (org-mode-hook . toc-org-enable))
 #+end_src
 
-* HIGHLIGHT TODO
+** Highlight TODO
 #+begin_src emacs-lisp
 (use-package hl-todo
   :hook ((org-mode . hl-todo-mode)
