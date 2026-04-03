@@ -91,3 +91,8 @@
   :after evil
   :config
   (evil-commentary-mode 1))
+
+(use-package nord-theme
+  :demand t
+  :init
+  (load-theme 'nord t))

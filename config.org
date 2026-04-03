@@ -103,3 +103,13 @@
   :config
   (evil-commentary-mode 1))
 #+end_src
+
+* Theme
+[[https://github.com/nordtheme/emacs][Nord Theme]]
+
+#+begin_src emacs-lisp
+(use-package nord-theme
+  :demand t
+  :init
+  (load-theme 'nord t))
+#+end_src
