@@ -67,3 +67,39 @@
       auto-save-default nil
       org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
 #+end_src
+
+* Evil Keybindings
+#+begin_src emacs-lisp
+(use-package evil
+  :demand t
+  :init
+  (setq evil-want-integration t ;; This is optional since it's already set to t by default.
+        evil-want-keybinding nil
+        evil-default-cursor 'box
+        evil-normal-state-cursor 'box
+        evil-insert-state-cursor 'box
+        evil-visual-state-cursor 'box
+        evil-vsplit-window-right t
+        evil-split-window-below t
+        evil-want-C-u-scroll t
+        evil-want-C-d-scroll t
+        select-enable-clipboard nil
+        select-enable-primary nil
+        evil-undo-system 'undo-redo)
+  :config
+  (evil-define-key 'visual global-map (kbd "SPC y") 'clipboard-kill-ring-save)
+  (evil-define-key 'visual global-map (kbd "SPC d") 'cliboard-kill-region)
+  (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
+  (evil-mode 1))
+(use-package evil-collection
+  :demand t
+  :after evil
+  :config
+  (add-to-list 'evil-collection-mode-list 'help) ;; evilify help mode
+  (evil-collection-init))
+(use-package evil-commentary
+  :demand t
+  :after evil
+  :config
+  (evil-commentary-mode 1))
+#+end_src
