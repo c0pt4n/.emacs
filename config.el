@@ -86,6 +86,14 @@
   (evil-define-key 'visual global-map (kbd "SPC d") 'cliboard-kill-region)
   (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
   (evil-mode 1))
+;; Using RETURN to follow links in Org/Evil
+;; Unmap keys in 'evil-maps if not done, (setq org-return-follows-link t) will not work
+(with-eval-after-load 'evil-maps
+  (define-key evil-motion-state-map (kbd "SPC") nil)
+  (define-key evil-motion-state-map (kbd "RET") nil)
+  (define-key evil-motion-state-map (kbd "TAB") nil))
+;; Setting RETURN key in org-mode to follow links
+(setq org-return-follows-link  t)
 (use-package evil-collection
   :demand t
   :after evil

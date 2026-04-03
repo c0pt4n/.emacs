@@ -1,6 +1,20 @@
 #+title: c0pt4n vanilla emacs config
 #+author: c0pt4n
 
+* Table of Contents :toc:
+- [[#elpaca-package-manager][Elpaca Package Manager]]
+- [[#default-settings][Default Settings]]
+- [[#evil-keybindings][Evil Keybindings]]
+- [[#general][General]]
+- [[#theme][Theme]]
+- [[#dashboard][Dashboard]]
+- [[#org-mode][ORG Mode]]
+  - [[#general-org-settings][General ORG Settings]]
+  - [[#org-bullets][ORG BULLETS]]
+  - [[#org-tempo][ORG TEMPO]]
+  - [[#toc-org][Toc-ORG]]
+- [[#highlight-todo][HIGHLIGHT TODO]]
+
 * Elpaca Package Manager
 #+begin_src emacs-lisp
 (defvar elpaca-installer-version 0.12)
@@ -97,6 +111,14 @@
   (evil-define-key 'visual global-map (kbd "SPC d") 'cliboard-kill-region)
   (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
   (evil-mode 1))
+;; Using RETURN to follow links in Org/Evil
+;; Unmap keys in 'evil-maps if not done, (setq org-return-follows-link t) will not work
+(with-eval-after-load 'evil-maps
+  (define-key evil-motion-state-map (kbd "SPC") nil)
+  (define-key evil-motion-state-map (kbd "RET") nil)
+  (define-key evil-motion-state-map (kbd "TAB") nil))
+;; Setting RETURN key in org-mode to follow links
+(setq org-return-follows-link  t)
 (use-package evil-collection
   :demand t
   :after evil
@@ -207,7 +229,7 @@
 (require 'org-tempo)
 #+end_src
 
-** Toc-Org
+** Toc-ORG
 #+begin_src emacs-lisp
 (use-package toc-org
   :commands toc-org-enable
