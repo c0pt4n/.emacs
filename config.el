@@ -53,6 +53,12 @@
 (blink-cursor-mode -1)
 (global-display-line-numbers-mode)
 (electric-pair-mode 1)
+;; The following prevents <> from auto-pairing when electric-pair-mode is on.
+;; Otherwise, org-tempo is broken when you try to <s TAB...
+(add-hook 'org-mode-hook (lambda ()
+           (setq-local electric-pair-inhibit-predicate
+                   `(lambda (c)
+                  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 (setq scroll-margin 8
       display-line-numbers-type 'relative
       make-backup-files nil
@@ -146,3 +152,41 @@
   :demand t
   :init
   (load-theme 'nord t))
+
+(use-package dashboard
+  :init
+   (setq initial-buffer-choice 'dashboard-open)
+   (setq doom-fallback-buffer-name "*dashboard*")
+   (add-hook 'doom-enter-frame-hook #'dashboard-open)
+   (setq dashboard-startup-banner 'logo)
+   (setq dashboard-banner-logo-title "Greetings, hack!")
+   (setq dashboard-set-heading-icons t)
+   (setq dashboard-footer-icon "☠")
+   (setq dashboard-footer-messages '("Eat, Sleep, Hack, Repeat..."))
+   (setq initial-scratch-message nil)
+  :config
+   (dashboard-setup-startup-hook))
+
+(setq org-directory "~/docs/notes/org")
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode))
+
+(require 'org-tempo)
+
+(use-package toc-org
+  :commands toc-org-enable
+  :hook (org-mode-hook . toc-org-enable))
+
+(use-package hl-todo
+  :hook ((org-mode . hl-todo-mode)
+         (prog-mode . hl-todo-mode))
+  :config
+  (setq hl-todo-highlight-punctuation ":"
+        hl-todo-keyword-faces
+        `(("TODO"       warning bold)
+          ("FIXME"      error bold)
+          ("HACK"       font-lock-constant-face bold)
+          ("REVIEW"     font-lock-keyword-face bold)
+          ("NOTE"       success bold)
+          ("DEPRECATED" font-lock-doc-face bold))))
