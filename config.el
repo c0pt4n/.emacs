@@ -52,6 +52,7 @@
 (menu-bar-mode -1)
 (blink-cursor-mode -1)
 (global-display-line-numbers-mode)
+(electric-pair-mode 1)
 (setq scroll-margin 8
       display-line-numbers-type 'relative
       make-backup-files nil
