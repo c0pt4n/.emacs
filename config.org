@@ -1,0 +1,2 @@
+#+title: c0pt4n vanilla emacs config
+#+author: c0pt4n
