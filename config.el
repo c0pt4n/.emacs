@@ -66,6 +66,7 @@
       auto-save-default nil
       org-edit-src-content-indentation 0 ;; Set src block automatic indent to 0 instead of 2.
       native-comp-async-report-warnings-errors 'silent) ;; Native Comp
+(fset 'yes-or-no-p 'y-or-n-p)
 
 (use-package evil
   :demand t
