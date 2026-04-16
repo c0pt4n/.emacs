@@ -148,6 +148,11 @@
 	    :wk "Open user-emacs-directory in dired"))
 
   (me/leader-keys
+    "n r" '(:ignore t :wk "Org roam")
+    "n r f" '(org-roam-node-find :wk "Find node")
+    "n r i" '(org-roam-node-insert :wk "Insert node"))
+
+  (me/leader-keys
     "w" '(:ignore t :wk "Window")
     "w s" '(evil-window-split :wk "Horizontal split")
     "w v" '(evil-window-vsplit :wk "Vertical split")
@@ -157,7 +162,7 @@
     "w j" '(evil-window-down :wk "Window down")
     "w c" '(evil-window-delete :wk "Close window")
     "w n" '(evil-window-new :wk "New window"))
-  )
+)
 
 (use-package nord-theme
   :demand t
@@ -213,6 +218,11 @@
   :config
    (dashboard-setup-startup-hook))
 
+(use-package nerd-icons-dired
+  :after nerd-icons
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
+
 (setq org-directory "~/docs/notes/org")
 
 (use-package org-bullets
@@ -236,3 +246,42 @@
           ("REVIEW"     font-lock-keyword-face bold)
           ("NOTE"       success bold)
           ("DEPRECATED" font-lock-doc-face bold))))
+
+(use-package org-roam
+  :hook (org-mode . org-roam-db-autosync-mode)
+  :commands (org-roam-node-find
+	     org-roam-node-insert
+	     org-roam-dailies-goto-today
+	     org-roam-buffer-toggle
+	     org-roam-db-sync
+	     org-roam-capture)
+  :init
+  (setq org-roam-directory "~/docs/notes/org/roam"
+	org-roam-v2-ack t)
+  :config
+  (unless (file-exists-p org-roam-directory)
+    (make-directory org-roam-directory t)))
+
+(use-package org-download
+  :after org
+  :init
+  (add-hook 'org-mode-hook 'org-download-enable)
+  (add-hook 'dired-mode-hook 'org-download-enable)
+  :config
+  (setq-default org-download-image-dir "~/docs/notes/org/attachments")
+  (setq org-download-heading-lvl nil)
+  (setq org-download-timestamp "%Y%m%d-%H%M%S_"))
+
+(use-package nerd-icons)
+
+(use-package doom-modeline
+  :config
+  (setq doom-modeline-icon t)
+  :init
+  (doom-modeline-mode 1))
+
+(use-package which-key
+  :demand t
+  :config
+  (setq which-key-idle-delay 0.1)
+  (which-key-mode 1))

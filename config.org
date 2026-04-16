@@ -11,12 +11,17 @@
   - [[#faces][Faces]]
   - [[#zooming-inout][Zooming IN/OUT]]
 - [[#dashboard][Dashboard]]
-- [[#org-mode][ORG Mode]]
-  - [[#general-org-settings][General ORG Settings]]
-  - [[#org-bullets][ORG BULLETS]]
-  - [[#org-tempo][ORG TEMPO]]
-  - [[#toc-org][Toc-ORG]]
+- [[#dired][Dired]]
+- [[#org-mode][Org Mode]]
+  - [[#general-org-settings][General Org Settings]]
+  - [[#org-bullets][Org Bullets]]
+  - [[#org-tempo][Org Tempo]]
+  - [[#toc-org][Toc-Org]]
   - [[#highlight-todo][Highlight TODO]]
+  - [[#org-roam][Org Roam]]
+  - [[#org-download][Org Download]]
+- [[#doom-modeline][Doom Modeline]]
+- [[#which-key][Which Key]]
 
 * Elpaca Package Manager
 #+begin_src emacs-lisp
@@ -179,6 +184,11 @@
 	    :wk "Open user-emacs-directory in dired"))
 
   (me/leader-keys
+    "n r" '(:ignore t :wk "Org roam")
+    "n r f" '(org-roam-node-find :wk "Find node")
+    "n r i" '(org-roam-node-insert :wk "Insert node"))
+
+  (me/leader-keys
     "w" '(:ignore t :wk "Window")
     "w s" '(evil-window-split :wk "Horizontal split")
     "w v" '(evil-window-vsplit :wk "Vertical split")
@@ -188,7 +198,7 @@
     "w j" '(evil-window-down :wk "Window down")
     "w c" '(evil-window-delete :wk "Close window")
     "w n" '(evil-window-new :wk "New window"))
-  )
+)
 #+end_src
 
 * Theme
@@ -260,24 +270,32 @@
    (dashboard-setup-startup-hook))
 #+end_src
 
-* ORG Mode
-** General ORG Settings
+* Dired
+#+begin_src emacs-lisp
+(use-package nerd-icons-dired
+  :after nerd-icons
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
+#+end_src
+
+* Org Mode
+** General Org Settings
 #+begin_src emacs-lisp
 (setq org-directory "~/docs/notes/org")
 #+end_src
 
-** ORG BULLETS
+** Org Bullets
 #+begin_src emacs-lisp
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
 #+end_src
 
-** ORG TEMPO
+** Org Tempo
 #+begin_src emacs-lisp
 (require 'org-tempo)
 #+end_src
 
-** Toc-ORG
+** Toc-Org
 #+begin_src emacs-lisp
 (use-package toc-org
   :commands toc-org-enable
@@ -298,4 +316,55 @@
           ("REVIEW"     font-lock-keyword-face bold)
           ("NOTE"       success bold)
           ("DEPRECATED" font-lock-doc-face bold))))
+#+end_src
+
+** Org Roam
+#+begin_src emacs-lisp
+(use-package org-roam
+  :hook (org-mode . org-roam-db-autosync-mode)
+  :commands (org-roam-node-find
+	     org-roam-node-insert
+	     org-roam-dailies-goto-today
+	     org-roam-buffer-toggle
+	     org-roam-db-sync
+	     org-roam-capture)
+  :init
+  (setq org-roam-directory "~/docs/notes/org/roam"
+	org-roam-v2-ack t)
+  :config
+  (unless (file-exists-p org-roam-directory)
+    (make-directory org-roam-directory t))) 
+#+end_src
+
+** Org Download
+#+begin_src emacs-lisp
+(use-package org-download
+  :after org
+  :init
+  (add-hook 'org-mode-hook 'org-download-enable)
+  (add-hook 'dired-mode-hook 'org-download-enable)
+  :config
+  (setq-default org-download-image-dir "~/docs/notes/org/attachments")
+  (setq org-download-heading-lvl nil)
+  (setq org-download-timestamp "%Y%m%d-%H%M%S_"))
+#+end_src
+
+* Doom Modeline
+#+begin_src emacs-lisp
+(use-package nerd-icons)
+
+(use-package doom-modeline
+  :config
+  (setq doom-modeline-icon t)
+  :init
+  (doom-modeline-mode 1))
+#+end_src
+
+* Which Key
+#+begin_src emacs-lisp
+(use-package which-key
+  :demand t
+  :config
+  (setq which-key-idle-delay 0.1)
+  (which-key-mode 1))
 #+end_src
