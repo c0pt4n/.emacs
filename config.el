@@ -48,6 +48,8 @@
       ;; use-package-compute-statistics t
       use-package-expand-minimally t)
 
+(setq user-full-name "Omar Mohamed"
+      user-mail-address "omarcoptan9@gmail.com")
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
