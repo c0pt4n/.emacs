@@ -1,0 +1,22 @@
+;;; dired-config.el --- Dired/dirvish config -*- lexical-binding: t; -*-
+
+(use-package dired
+  :ensure nil
+  :hook
+  (dired-mode . auto-revert-mode)
+  :custom
+  (dired-listing-switches "-lAh --group-directories-first --no-group")
+  (dired-kill-when-opening-new-dired-buffer t)
+  (dired-auto-revert-buffer t))
+
+(use-package dirvish
+  :ensure t
+  :init
+  (dirvish-override-dired-mode)
+  :custom
+  (dirvish-attributes '(nerd-icons subtree-state file-size))
+  (dirvish-use-mode-line nil)
+  (dirvish-use-header-line t)
+  (dirvish-header-line-format '(:left (path) :right (free-space))))
+
+(provide 'dired-setup)
