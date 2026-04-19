@@ -6,6 +6,7 @@
   (dired-mode . auto-revert-mode)
   :custom
   (dired-listing-switches "-lAh --group-directories-first --no-group")
+  (dired-dwim-target t)
   (dired-kill-when-opening-new-dired-buffer t)
   (dired-auto-revert-buffer t))
 
