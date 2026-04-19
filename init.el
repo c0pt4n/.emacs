@@ -124,3 +124,4 @@
 (require 'org-config)
 (require 'theme)
 (require 'pdf-setup)
+(require 'editing)
