@@ -13,12 +13,13 @@
     :global-prefix "M-SPC") ;; access leader in insert mode
 
   (me/leader-keys
-    "." '(find-file :wk "Find file"))
+    "." '(consult-fd :wk "Find file")
+    "/" '(consult-ripgrep :wk "Ripgrep"))
 
   (me/leader-keys
     "b" '(:ignore t :wk "Buffers")
     "b i" '(ibuffer :wk "Ibuffer")
-    "b b" '(switch-to-buffer :wk "Switch buffer")
+    "b b" '(consult-buffer :wk "Switch buffer")
     "b k" '(kill-current-buffer :wk "Kill this buffer")
     "b K" '(kill-some-buffer :wk "Kill multiple buffer")
     "b n" '(next-buffer :wk "Next buffer")
@@ -36,7 +37,8 @@
 	    :wk "Open emacs init.el")
     "f e" '((lambda() (interactive)
 	      (dired user-emacs-directory))
-	    :wk "Open user-emacs-directory in dired"))
+	    :wk "Open user-emacs-directory in dired")
+    "f r" '(consult-recent-file :wk "Recent files"))
 
   (me/leader-keys
     "n r" '(:ignore t :wk "Org roam")
