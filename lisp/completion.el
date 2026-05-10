@@ -47,4 +47,31 @@
   :init
   (nerd-icons-completion-mode))
 
+(use-package corfu
+  :ensure t
+  :custom
+  (corfu-auto        t)
+  (corfu-auto-delay  0)
+  (corfu-preview-current t)
+  (corfu-auto-prefix 1)
+  (corfu-cycle       t)
+  (corfu-quit-no-match t)
+  :config
+  (corfu-popupinfo-mode)
+  :init
+  (global-corfu-mode))
+
+;; remove ispell word completion
+(setq text-mode-ispell-word-completion nil)
+
+;; Global fallback capfs for non-eglot buffers.
+;; eglot-managed buffers get their own stack rebuilt in grammars.el.
+(use-package cape
+  :ensure t
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-keyword)
+  (add-to-list 'completion-at-point-functions #'cape-elisp-block))
+
 (provide 'completion)
