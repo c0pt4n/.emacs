@@ -56,4 +56,8 @@
   (unless (file-exists-p org-roam-directory)
     (make-directory org-roam-directory t))) 
 
+(use-package ox-typst
+  :ensure t
+  :after org)
+
  (provide 'org-config)
