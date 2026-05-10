@@ -130,6 +130,7 @@
 (require 'dired-setup)
 (require 'org-config)
 (require 'theme)
+(require 'magit-config)
 (require 'pdf-setup)
 (require 'completion)
 (require 'editing)

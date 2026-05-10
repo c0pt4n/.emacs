@@ -41,6 +41,10 @@
     "f r" '(consult-recent-file :wk "Recent files"))
 
   (me/leader-keys
+    "g" '(:ignore t :wk "Git")
+    "g s" '(magit-status :wk "Git status"))
+
+  (me/leader-keys
     "n r" '(:ignore t :wk "Org roam")
     "n r f" '(org-roam-node-find :wk "Find node")
     "n r i" '(org-roam-node-insert :wk "Insert node"))
