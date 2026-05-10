@@ -45,6 +45,11 @@
 (elpaca elpaca-use-package
         (elpaca-use-package-mode))
 (elpaca-wait)
+(elpaca cond-let)
+(elpaca compat)
+(elpaca-wait)
+(elpaca transient)
+(elpaca-wait)
 
 (setq use-package-always-defer t
       use-package-always-ensure t
