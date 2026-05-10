@@ -121,8 +121,6 @@
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
 
-(elpaca compat) ;; ensure compat is always on the latest version
-
 (require 'evil-setup)
 (require 'general-keybinds)
 (require 'dashboard-setup)
