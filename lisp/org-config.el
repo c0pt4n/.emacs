@@ -5,8 +5,7 @@
 (with-eval-after-load 'org
   (setq 
         org-edit-src-content-indentation 0
-        org-hide-leading-stars           t)
-  (require 'org-tempo))
+        org-hide-leading-stars           t))
 
 (use-package toc-org
   :after org

@@ -132,3 +132,4 @@
 (require 'pdf-setup)
 (require 'completion)
 (require 'editing)
+(require 'development)
