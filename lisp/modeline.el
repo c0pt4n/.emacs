@@ -9,4 +9,6 @@
   :init
   (doom-modeline-mode 1))
 
+(elpaca-wait)
+
 (provide 'modeline)

@@ -11,6 +11,8 @@
   :init
   (marginalia-mode 1))
 
+(elpaca-wait)
+
 (use-package orderless
   :ensure t
   :custom
