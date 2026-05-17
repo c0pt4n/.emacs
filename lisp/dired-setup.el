@@ -18,6 +18,9 @@
   (dirvish-attributes '(nerd-icons subtree-state file-size))
   (dirvish-use-mode-line nil)
   (dirvish-use-header-line t)
-  (dirvish-header-line-format '(:left (path) :right (free-space))))
+  (dirvish-header-line-format '(:left (path) :right (free-space)))
+  (dirvish-hide-details '(dirvish))
+  (dirvish-reuse-session 'open)
+  (dirvish-preview-dispatchers '(image gif video audio epub archive pdf)))
 
 (provide 'dired-setup)
