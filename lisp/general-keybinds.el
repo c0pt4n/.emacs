@@ -45,6 +45,11 @@
     "g s" '(magit-status :wk "Git status"))
 
   (me/leader-keys
+    "o" '(:ignore t :wk "Open")
+    "o t" '(vterm-toggle :wk "Open vterm")
+    "o T" '(vterm-toggle-cd :wk "Open vterm here"))
+
+  (me/leader-keys
     "n r" '(:ignore t :wk "Org roam")
     "n r f" '(org-roam-node-find :wk "Find node")
     "n r i" '(org-roam-node-insert :wk "Insert node"))

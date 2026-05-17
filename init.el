@@ -126,6 +126,7 @@
 (require 'dashboard-setup)
 (require 'modeline)
 (require 'dired-setup)
+(require 'vterm-config)
 (require 'org-config)
 (require 'theme)
 (require 'magit-config)
