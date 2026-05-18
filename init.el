@@ -57,6 +57,14 @@
       ;; use-package-compute-statistics t
       use-package-expand-minimally t)
 
+(setq custom-file (expand-file-name "etc/custom.el" user-emacs-directory))
+
+(use-package no-littering
+  :demand t
+  :init
+  (setq no-littering-etc-directory (expand-file-name "etc/" user-emacs-directory)
+	no-littering-var-directory "~/.local/share/emacs/"))
+
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
