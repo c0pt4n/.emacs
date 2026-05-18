@@ -6,7 +6,7 @@
   (setq major-mode-remap-alist
 	'((c-mode          . c-ts-mode)
 	  (go-mode         . go-ts-mode)
-	  (bash-mode       . bash-ts-mode)
+	  (sh-mode         . bash-ts-mode)
 	  (html-mode       . html-ts-mode)
 	  (json-mode       . json-ts-mode)
 	  (python-mode     . python-ts-mode)
@@ -33,8 +33,7 @@
                  ("go\\.mod\\'"  . go-mod-ts-mode)
                  ("go\\.sum\\'"  . go-mod-ts-mode)
                  ("\\.c\\'"      . c-ts-mode)
-                 ("\\.h\\'"      . c-ts-mode)
-                 ("\\.sh\\'"     . bash-ts-mode)))
+                 ("\\.h\\'"      . c-ts-mode)))
   (add-to-list 'auto-mode-alist entry))
 
 ;; YASNIPPET
