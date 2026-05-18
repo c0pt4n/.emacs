@@ -73,4 +73,21 @@
 ;; See go-mode snippets
 (add-hook 'go-ts-mode-hook #'(lambda () (yas-activate-extra-mode 'go-mode)))
 
+;; EGLOT
+(use-package eglot
+  :ensure nil
+  :hook ((go-ts-mode     . eglot-ensure)
+         (bash-ts-mode   . eglot-ensure)
+         (json-ts-mode   . eglot-ensure)
+         (yaml-ts-mode   . eglot-ensure)
+         (python-ts-mode . eglot-ensure)
+         (js-ts-mode     . eglot-ensure)
+         (html-ts-mode   . eglot-ensure)
+         (c-ts-mode      . eglot-ensure))
+  :custom
+  (eglot-autoshutdown       t)
+  (eglot-events-buffer-size 0)
+  (eglot-sync-connect       nil)
+  (eglot-extend-to-xref     t))
+
 (provide 'development)
