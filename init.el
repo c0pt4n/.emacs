@@ -92,6 +92,17 @@
   (setq which-key-idle-delay 0.1)
   (which-key-mode 1))
 
+(use-package recentf
+  :ensure nil
+  :config
+  (setq recentf-max-menu-items 25
+	recentf-max-saved-items 100)
+    (dolist (path '("\\.git/" "/tmp/" "/nix/store/"))
+    (add-to-list 'recentf-exclude path))
+  (add-to-list 'recentf-exclude (recentf-expand-file-name no-littering-var-directory))
+  (add-to-list 'recentf-exclude (recentf-expand-file-name no-littering-etc-directory))
+  (add-hook 'kill-emacs-hook #'recentf-cleanup -90))
+
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 
 (set-face-attribute 'default nil
