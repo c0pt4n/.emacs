@@ -8,10 +8,9 @@
 	  (go-mode         . go-ts-mode)
 	  (bash-mode       . bash-ts-mode)
 	  (html-mode       . html-ts-mode)
-	  (python-mode     . python-ts-mode)
 	  (json-mode       . json-ts-mode)
+	  (python-mode     . python-ts-mode)
 	  (yaml-mode       . yaml-ts-mode)
-	  (conf-toml-mode  . toml-ts-mode)
 	  (javascript-mode . js-ts-mode)))
   (setq treesit-language-source-alist
    '((c           "https://github.com/tree-sitter/tree-sitter-c")
@@ -20,10 +19,8 @@
      (bash        "https://github.com/tree-sitter/tree-sitter-bash")
      (html        "https://github.com/tree-sitter/tree-sitter-html")
      (json        "https://github.com/tree-sitter/tree-sitter-json")
-     (toml        "https://github.com/tree-sitter/tree-sitter-toml")
      (yaml        "https://github.com/ikatyang/tree-sitter-yaml")
      (python      "https://github.com/tree-sitter/tree-sitter-python")
-     (markdown    "https://github.com/ikatyang/tree-sitter-markdown")
      (javascript  "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")))
   :config
   (dolist (lang treesit-language-source-alist)
@@ -36,7 +33,8 @@
                  ("go\\.mod\\'"  . go-mod-ts-mode)
                  ("go\\.sum\\'"  . go-mod-ts-mode)
                  ("\\.c\\'"      . c-ts-mode)
-                 ("\\.h\\'"      . c-ts-mode)))
+                 ("\\.h\\'"      . c-ts-mode)
+                 ("\\.sh\\'"     . bash-ts-mode)))
   (add-to-list 'auto-mode-alist entry))
 
 ;; YASNIPPET
