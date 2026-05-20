@@ -85,6 +85,8 @@
       native-comp-async-report-warnings-errors 'silent ;; Native Comp
       use-short-answers t)
 
+(setq-default truncate-lines t)
+
 (use-package which-key
   :ensure nil
   :demand t
