@@ -16,4 +16,8 @@
   (define-key magit-log-mode-map (kbd "SPC") nil)
   (define-key magit-diff-mode-map (kbd "SPC") nil))
 
+(use-package git-gutter
+  :init
+  (global-git-gutter-mode +1))
+
 (provide 'magit-config)
