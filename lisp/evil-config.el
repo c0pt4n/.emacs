@@ -1,4 +1,4 @@
-;;; evil-setup.el -*- lexical-binding: t; -*-
+;;; evil-config.el -*- lexical-binding: t; -*-
 
 (use-package evil
   :demand t
@@ -44,4 +44,4 @@
   :config
   (evil-commentary-mode 1))
 
-(provide 'evil-setup)
+(provide 'evil-config)

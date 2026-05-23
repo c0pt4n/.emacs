@@ -142,7 +142,7 @@
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
 
-(require 'evil-setup)
+(require 'evil-config)
 (require 'general-keybinds)
 (require 'dashboard-setup)
 (require 'modeline)
