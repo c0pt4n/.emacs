@@ -18,7 +18,7 @@
         evil-undo-system 'undo-redo)
   :config
   (evil-define-key 'visual global-map (kbd "SPC y") 'clipboard-kill-ring-save)
-  (evil-define-key 'visual global-map (kbd "SPC d") 'cliboard-kill-region)
+  (evil-define-key 'visual global-map (kbd "SPC d") 'clipboard-kill-region)
   (evil-define-key 'insert global-map (kbd "C-v") 'clipboard-yank)
   (evil-mode 1))
 ;; Using RETURN to follow links in Org/Evil
