@@ -36,7 +36,6 @@
   :demand t
   :after evil
   :config
-  (add-to-list 'evil-collection-mode-list 'help) ;; evilify help mode
   (evil-collection-init))
 (use-package evil-commentary
   :demand t
