@@ -63,7 +63,8 @@
     "w k" '(evil-window-up :wk "Window up")
     "w j" '(evil-window-down :wk "Window down")
     "w c" '(evil-window-delete :wk "Close window")
-    "w n" '(evil-window-new :wk "New window"))
+    "w n" '(evil-window-new :wk "New window")
+    "w o" '(delete-other-windows :wk "Close all windows"))
 )
 
 (provide 'general-keybinds)
