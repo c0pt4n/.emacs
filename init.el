@@ -69,7 +69,7 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (blink-cursor-mode -1)
-(global-display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (electric-pair-mode 1)
 ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
 ;; Otherwise, org-tempo is broken when you try to <s TAB...

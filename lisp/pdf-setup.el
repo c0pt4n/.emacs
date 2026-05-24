@@ -14,7 +14,6 @@
   (add-hook 'pdf-view-mode-hook
             (lambda ()
               (pdf-view-midnight-minor-mode 1)
-	      (display-line-numbers-mode -1)
               (setq-local mode-line-format nil)))
   (with-eval-after-load 'evil
     (evil-define-key 'normal pdf-view-mode-map
