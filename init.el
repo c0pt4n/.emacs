@@ -85,7 +85,9 @@
       native-comp-async-report-warnings-errors 'silent ;; Native Comp
       use-short-answers t)
 
-(setq-default truncate-lines t)
+(setq-default truncate-lines t
+              tab-width 4)
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 (use-package which-key
   :ensure nil
