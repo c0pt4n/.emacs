@@ -3,8 +3,6 @@
 (use-package dashboard
   :init
   (setq initial-buffer-choice 'dashboard-open)
-  (setq doom-fallback-buffer-name "*dashboard*")
-  (add-hook 'doom-enter-frame-hook #'dashboard-open)
   (setq dashboard-startup-banner 'logo)
   (setq dashboard-banner-logo-title "Greetings, hack!")
   (setq dashboard-set-heading-icons t)
