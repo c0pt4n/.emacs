@@ -3,7 +3,7 @@
 (setq org-directory "~/docs/notes/org")
 
 (with-eval-after-load 'org
-  (setq 
+  (setq
         org-edit-src-content-indentation 0
         org-hide-leading-stars           t))
 
@@ -43,20 +43,20 @@
 (use-package org-roam
   :hook (org-mode . org-roam-db-autosync-mode)
   :commands (org-roam-node-find
-	     org-roam-node-insert
-	     org-roam-dailies-goto-today
-	     org-roam-buffer-toggle
-	     org-roam-db-sync
-	     org-roam-capture)
+			 org-roam-node-insert
+			 org-roam-dailies-goto-today
+			 org-roam-buffer-toggle
+			 org-roam-db-sync
+			 org-roam-capture)
   :init
   (setq org-roam-directory "~/docs/notes/org/roam"
-        org-roam-database-connector 'sqlite-builtin
-	org-roam-completion-everywhere t
-	org-roam-db-location (expand-file-name "org-roam.db" "~/docs/notes/org/roam")
-	org-roam-v2-ack t)
+		org-roam-database-connector 'sqlite-builtin
+		org-roam-completion-everywhere t
+		org-roam-db-location (expand-file-name "org-roam.db" "~/docs/notes/org/roam")
+		org-roam-v2-ack t)
   :config
   (unless (file-exists-p org-roam-directory)
-    (make-directory org-roam-directory t))) 
+	(make-directory org-roam-directory t)))
 
 (use-package ox-typst
   :ensure t

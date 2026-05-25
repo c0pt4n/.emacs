@@ -43,7 +43,7 @@
 (elpaca `(,@elpaca-order))
 
 (elpaca elpaca-use-package
-        (elpaca-use-package-mode))
+  (elpaca-use-package-mode))
 (elpaca-wait)
 (elpaca cond-let)
 (elpaca compat)
@@ -63,7 +63,7 @@
   :demand t
   :init
   (setq no-littering-etc-directory (expand-file-name "etc/" user-emacs-directory)
-	no-littering-var-directory "~/.local/share/emacs/"))
+		no-littering-var-directory "~/.local/share/emacs/"))
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -74,19 +74,19 @@
 ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
 ;; Otherwise, org-tempo is broken when you try to <s TAB...
 (add-hook 'org-mode-hook (lambda ()
-           (setq-local electric-pair-inhibit-predicate
-                   `(lambda (c)
-                  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
+						   (setq-local electric-pair-inhibit-predicate
+									   `(lambda (c)
+										  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 
 (setq scroll-margin 8
-      display-line-numbers-type 'relative
-      make-backup-files nil
-      auto-save-default nil
-      native-comp-async-report-warnings-errors 'silent ;; Native Comp
-      use-short-answers t)
+	  display-line-numbers-type 'relative
+	  make-backup-files nil
+	  auto-save-default nil
+	  native-comp-async-report-warnings-errors 'silent ;; Native Comp
+	  use-short-answers t)
 
 (setq-default truncate-lines t
-              tab-width 4)
+			  tab-width 4)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 (use-package which-key
@@ -100,9 +100,9 @@
   :ensure nil
   :config
   (setq recentf-max-menu-items 25
-	recentf-max-saved-items 100)
-    (dolist (path '("\\.git/" "/tmp/" "/nix/store/"))
-    (add-to-list 'recentf-exclude path))
+		recentf-max-saved-items 100)
+  (dolist (path '("\\.git/" "/tmp/" "/nix/store/"))
+	(add-to-list 'recentf-exclude path))
   (add-to-list 'recentf-exclude (recentf-expand-file-name no-littering-var-directory))
   (add-to-list 'recentf-exclude (recentf-expand-file-name no-littering-etc-directory))
   (add-hook 'kill-emacs-hook #'recentf-cleanup -90))
@@ -110,25 +110,25 @@
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 
 (set-face-attribute 'default nil
-  :font "IBM Plex Mono"
-  :height 120
-  :weight 'regular)
+					:font "IBM Plex Mono"
+					:height 120
+					:weight 'regular)
 (set-face-attribute 'variable-pitch nil
-  :font "IBM Plex Sans"
-  :height 130
-  :weight 'regular)
+					:font "IBM Plex Sans"
+					:height 130
+					:weight 'regular)
 (set-face-attribute 'fixed-pitch nil
-  :font "IBM Plex Mono"
-  :height 120
-  :weight 'regular)
+					:font "IBM Plex Mono"
+					:height 120
+					:weight 'regular)
 
 ;; Makes commented text and keywords italics.
 ;; This is working in emacsclient but not emacs.
 ;; Your font must have an italic face available.
 (set-face-attribute 'font-lock-comment-face nil
-  :slant 'italic)
+					:slant 'italic)
 (set-face-attribute 'font-lock-keyword-face nil
-  :slant 'italic)
+					:slant 'italic)
 
 ;; This sets the default font on all graphical frames created after restarting Emacs.
 ;; Does the same thing as 'set-face-attribute default' above, but emacsclient fonts

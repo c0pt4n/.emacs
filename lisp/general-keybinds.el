@@ -33,11 +33,11 @@
   (me/leader-keys
     "f" '(:ignore t :wk "Files")
     "f c" '((lambda() (interactive)
-	      (find-file (expand-file-name "init.el" user-emacs-directory)))
-	    :wk "Open emacs init.el")
+			  (find-file (expand-file-name "init.el" user-emacs-directory)))
+			:wk "Open emacs init.el")
     "f e" '((lambda() (interactive)
-	      (dired user-emacs-directory))
-	    :wk "Open user-emacs-directory in dired")
+			  (dired user-emacs-directory))
+			:wk "Open user-emacs-directory in dired")
     "f r" '(consult-recent-file :wk "Recent files"))
 
   (me/leader-keys
@@ -65,6 +65,6 @@
     "w c" '(evil-window-delete :wk "Close window")
     "w n" '(evil-window-new :wk "New window")
     "w o" '(delete-other-windows :wk "Close all windows"))
-)
+  )
 
 (provide 'general-keybinds)

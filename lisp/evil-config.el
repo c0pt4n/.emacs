@@ -4,18 +4,18 @@
   :demand t
   :init
   (setq evil-want-integration t ;; This is optional since it's already set to t by default.
-        evil-want-keybinding nil
-        evil-default-cursor 'box
-        evil-normal-state-cursor 'box
-        evil-insert-state-cursor 'box
-        evil-visual-state-cursor 'box
-        evil-vsplit-window-right t
-        evil-split-window-below t
-        evil-want-C-u-scroll t
-        evil-want-C-d-scroll t
-        select-enable-clipboard nil
-        select-enable-primary nil
-        evil-undo-system 'undo-redo)
+		evil-want-keybinding nil
+		evil-default-cursor 'box
+		evil-normal-state-cursor 'box
+		evil-insert-state-cursor 'box
+		evil-visual-state-cursor 'box
+		evil-vsplit-window-right t
+		evil-split-window-below t
+		evil-want-C-u-scroll t
+		evil-want-C-d-scroll t
+		select-enable-clipboard nil
+		select-enable-primary nil
+		evil-undo-system 'undo-redo)
   :config
   (evil-define-key 'visual global-map (kbd "SPC y") 'clipboard-kill-ring-save)
   (evil-define-key 'visual global-map (kbd "SPC d") 'clipboard-kill-region)

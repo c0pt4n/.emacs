@@ -9,7 +9,7 @@
   (setq pdf-view-display-size 'fit-page
         pdf-view-continuous t
         pdf-view-midnight-colors '("#d4c9a8" . "#1c1c1c")
-	pdf-view-midnight-colors '("#d8dee9" . "#2e3440")
+		pdf-view-midnight-colors '("#d8dee9" . "#2e3440")
         pdf-annot-activate-created-annotations t)
   (add-hook 'pdf-view-mode-hook
             (lambda ()
