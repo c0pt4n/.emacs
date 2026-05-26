@@ -32,3 +32,5 @@
 ;; Uncomment the following line if line spacing needs adjusting.
 (setq-default line-spacing 0.12)
 (set-face-background 'mouse "#ffffff")
+
+(setq native-comp-async-report-warnings-errors 'silent)
