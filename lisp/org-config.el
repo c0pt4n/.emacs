@@ -58,6 +58,15 @@
   (unless (file-exists-p org-roam-directory)
 	(make-directory org-roam-directory t)))
 
+(use-package org-roam-ui
+  :commands (org-roam-ui-mode org-roam-ui-open)
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+		org-roam-ui-follow t
+		org-roam-ui-update-on-save t
+		org-roam-ui-open-on-start nil))
+
 (use-package ox-typst
   :ensure t
   :after org)
