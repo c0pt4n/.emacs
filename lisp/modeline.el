@@ -2,13 +2,13 @@
 
 (use-package nerd-icons :demand t)
 
+(elpaca-wait)
+
 (use-package doom-modeline
   :demand t
-  :config
-  (setq doom-modeline-icon t)
   :init
+  (setq doom-modeline-icon t)
+  :config
   (doom-modeline-mode 1))
-
-(elpaca-wait)
 
 (provide 'modeline)
