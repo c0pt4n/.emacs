@@ -107,6 +107,19 @@
   (add-to-list 'recentf-exclude (recentf-expand-file-name no-littering-etc-directory))
   (add-hook 'kill-emacs-hook #'recentf-cleanup -90))
 
+(use-package savehist
+  :ensure nil
+  :config
+  (setq history-length 1000
+		history-delete-duplicates t
+		savehist-save-minibuffer-history t)
+  (dolist (var '(extended-command-history
+				 search-ring
+				 regexp-search-ring
+				 consult--buffer-history
+				 recentf-list))
+	(add-to-list 'savehist-additional-variables var)))
+
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 
 (set-face-attribute 'default nil
@@ -139,13 +152,8 @@
 (setq-default line-spacing 0.12)
 (set-face-background 'mouse "#ffffff")
 
-(global-set-key (kbd "C-=") 'text-scale-increase)
-(global-set-key (kbd "C--") 'text-scale-decrease)
-(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
-(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
-
 (require 'evil-config)
-(require 'general-keybinds)
+(require 'keys)
 (require 'dashboard-setup)
 (require 'modeline)
 (require 'dired-setup)
@@ -157,3 +165,5 @@
 (require 'completion)
 (require 'editing)
 (require 'development)
+(require 'emms-config)
+(require 'workspaces)

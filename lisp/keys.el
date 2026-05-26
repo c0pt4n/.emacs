@@ -1,4 +1,4 @@
-;;; general-keybinds.el --- General Keybindings -*- lexical-binding: t; -*-
+;;; keys.el --- General Keybindings -*- lexical-binding: t; -*-
 
 (use-package general
   :demand t
@@ -25,6 +25,9 @@
     "b n" '(next-buffer :wk "Next buffer")
     "b p" '(previous-buffer :wk "Previous buffer")
     "b r" '(revert-buffer :wk "Reload buffer"))
+
+  (me/leader-keys
+    "c c" '(compile :wk "Compile"))
 
   (me/leader-keys
     "d" '(:ignore t :wk "Dired")
@@ -55,6 +58,11 @@
     "n r i" '(org-roam-node-insert :wk "Insert node"))
 
   (me/leader-keys
+    "p" '(:ignore t :wk "Project")
+    "p f" '(project-find-file :wk "Project find file")
+    "p g" '(project-find-regexp :wk "Project find regexp"))
+
+  (me/leader-keys
     "w" '(:ignore t :wk "Window")
     "w s" '(evil-window-split :wk "Horizontal split")
     "w v" '(evil-window-vsplit :wk "Vertical split")
@@ -67,4 +75,7 @@
     "w o" '(delete-other-windows :wk "Close all windows"))
   )
 
-(provide 'general-keybinds)
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
+(provide 'keys)
