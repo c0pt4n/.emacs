@@ -7,28 +7,21 @@
         org-edit-src-content-indentation 0
         org-hide-leading-stars           t))
 
+(use-package org-modern
+  :hook (org-mode . org-modern-mode)
+  :init
+  (setq org-modern-star '("●" "○" "◆" "◇" "▸")))
+
 (use-package toc-org
   :after org
   :commands toc-org-enable
   :hook
   (org-mode . toc-org-enable))
 
-(use-package org-bullets
-  :hook (org-mode . org-bullets-mode))
-
 (use-package hl-todo
   :hook
   ((org-mode . hl-todo-mode)
-   (prog-mode . hl-todo-mode))
-  :config
-  (setq hl-todo-highlight-punctuation ":"
-        hl-todo-keyword-faces
-        '(("TODO"       warning bold)
-          ("FIXME"      error bold)
-          ("HACK"       font-lock-constant-face bold)
-          ("REVIEW"     font-lock-keyword-face bold)
-          ("NOTE"       success bold)
-          ("DEPRECATED" font-lock-doc-face bold))))
+   (prog-mode . hl-todo-mode)))
 
 (use-package org-download
   :after org
