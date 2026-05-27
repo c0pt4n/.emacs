@@ -13,7 +13,7 @@
     :global-prefix "M-SPC") ;; access leader in insert mode
 
   (me/leader-keys
-    "." '(consult-fd :wk "Find file")
+    "." '(find-file :wk "Find file")
     "/" '(consult-ripgrep :wk "Ripgrep"))
 
   (me/leader-keys
