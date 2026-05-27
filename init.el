@@ -64,6 +64,7 @@
   :init
   (setq no-littering-etc-directory (expand-file-name "etc/" user-emacs-directory)
 		no-littering-var-directory "~/.local/share/emacs/"))
+(elpaca-wait)
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -71,6 +72,9 @@
 (blink-cursor-mode -1)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (electric-pair-mode 1)
+(global-hl-line-mode 1)
+(column-number-mode 1)
+(global-auto-revert-mode 1)
 ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
 ;; Otherwise, org-tempo is broken when you try to <s TAB...
 (add-hook 'org-mode-hook (lambda ()
@@ -98,6 +102,8 @@
 
 (use-package recentf
   :ensure nil
+  :init
+  (recentf-mode 1)
   :config
   (setq recentf-max-menu-items 25
 		recentf-max-saved-items 100)
@@ -109,6 +115,8 @@
 
 (use-package savehist
   :ensure nil
+  :init
+  (savehist-mode 1)
   :config
   (setq history-length 1000
 		history-delete-duplicates t
