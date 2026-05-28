@@ -60,7 +60,6 @@
 		org-roam-ui-open-on-start nil))
 
 (use-package ox-typst
-  :ensure t
   :after org)
 
 (provide 'org-config)
