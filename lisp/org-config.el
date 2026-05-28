@@ -25,9 +25,8 @@
 
 (use-package org-download
   :after org
-  :init
-  (add-hook 'org-mode-hook 'org-download-enable)
-  (add-hook 'dired-mode-hook 'org-download-enable)
+  :hook ((org-mode . org-download-enable)
+		 (dired    . org-download-enable))
   :config
   (setq-default org-download-image-dir "~/docs/notes/org/attachments")
   (setq org-download-heading-lvl nil)
