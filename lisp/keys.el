@@ -10,7 +10,7 @@
     :states '(normal insert visual emacs)
     :keymaps 'override
     :prefix "SPC" ;; set leader
-    :global-prefix "M-SPC") ;; access leader in insert mode
+    :global-prefix "C-SPC") ;; access leader in insert mode
 
   (me/leader-keys
     "." '(find-file :wk "Find file")
