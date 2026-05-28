@@ -145,5 +145,5 @@
 (require 'completion)
 (require 'editing)
 (require 'development)
-(require 'emms-config)
-(require 'workspaces)
+;; (require 'emms-config)
+;; (require 'workspaces)
