@@ -60,7 +60,11 @@
 		org-roam-ui-open-on-start nil))
 
 (use-package ox-typst
-  :after org)
+  :ensure t
+  :commands (org-export-dispatch)
+  :init
+  (with-eval-after-load 'org
+    (require 'ox-typst)))
 
 (provide 'org-config)
 ;;; org-config.el ends here
