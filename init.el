@@ -132,8 +132,9 @@
 
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 
-(require 'evil-config)
-(require 'keys)
+;; (require 'evil-config)
+;; (require 'keys)
+(require 'meow-config)
 (require 'dashboard-setup)
 (require 'modeline)
 (require 'dired-setup)
