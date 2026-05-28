@@ -66,8 +66,10 @@
 		no-littering-var-directory "~/.local/share/emacs/"))
 (elpaca-wait)
 
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
 (menu-bar-mode -1)
 (blink-cursor-mode -1)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
