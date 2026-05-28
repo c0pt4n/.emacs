@@ -23,8 +23,15 @@
    '("b n" . next-buffer)
    '("b i" . ibuffer)
 
+   '("c c" . compile)
+
    ;; Magit
    '("g" . (lambda () (interactive) (require 'magit) (magit-status)))
+
+   ;; Toggling keybindings
+   '("o t" . vterm-toggle)
+   '("o T" . vterm)
+   '("o d" . dirvish)
 
    ;; Window bindings
    '("w v" . split-window-right)
@@ -112,6 +119,9 @@
   :config
   (meow-setup)
   (meow-global-mode))
+
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
 
 (provide 'meow-config)
 ;;; meow-config.el ends here
