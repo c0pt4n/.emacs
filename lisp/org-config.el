@@ -3,9 +3,9 @@
 (setq org-directory "~/docs/notes/org")
 
 (with-eval-after-load 'org
-  (setq
-        org-edit-src-content-indentation 0
-        org-hide-leading-stars           t))
+  (setq org-edit-src-content-indentation 0
+        org-hide-leading-stars           t
+		org-return-follows-link  t)) ;; Setting RETURN key in org-mode to follow links
 
 (use-package org-modern
   :hook (org-mode . org-modern-mode)

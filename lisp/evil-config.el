@@ -27,8 +27,6 @@
   (define-key evil-motion-state-map (kbd "SPC") nil)
   (define-key evil-motion-state-map (kbd "RET") nil)
   (define-key evil-motion-state-map (kbd "TAB") nil))
-;; Setting RETURN key in org-mode to follow links
-(setq org-return-follows-link  t)
 
 (elpaca-wait) ; block until evil is fully built before evil-collection etc.
 
