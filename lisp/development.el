@@ -90,3 +90,4 @@
   (eglot-extend-to-xref     t))
 
 (provide 'development)
+;;; development.el ends here

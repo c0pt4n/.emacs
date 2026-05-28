@@ -40,3 +40,4 @@
       (kbd "q")   #'quit-window)))
 
 (provide 'pdf-setup)
+;;; pdf-setup.el ends here

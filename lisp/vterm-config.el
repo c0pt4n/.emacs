@@ -10,3 +10,4 @@
 (use-package vterm-toggle)
 
 (provide 'vterm-config)
+;;; vterm-config.el ends here

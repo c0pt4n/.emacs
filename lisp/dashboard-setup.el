@@ -1,4 +1,4 @@
-;;; dashboard-setup.el -*- lexical-binding: t; -*-
+;;; dashboard-setup.el --- Startup dashboard -*- lexical-binding: t; -*-
 
 (use-package dashboard
   :init
@@ -15,3 +15,4 @@
   (dashboard-setup-startup-hook))
 
 (provide 'dashboard-setup)
+;;; dashboard-setup.el ends here

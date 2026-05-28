@@ -64,4 +64,5 @@
   :ensure t
   :after org)
 
- (provide 'org-config)
+(provide 'org-config)
+;;; org-config.el ends here

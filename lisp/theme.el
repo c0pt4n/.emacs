@@ -9,3 +9,4 @@
   (catppuccin-reload))
 
 (provide 'theme)
+;;; theme.el ends here

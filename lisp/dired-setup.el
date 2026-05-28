@@ -24,3 +24,4 @@
   (dirvish-preview-dispatchers '(image gif video audio epub archive pdf)))
 
 (provide 'dired-setup)
+;;; dired-setup ends here

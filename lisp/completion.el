@@ -77,3 +77,4 @@
   (add-to-list 'completion-at-point-functions #'cape-elisp-block))
 
 (provide 'completion)
+;;; completion.el ends here

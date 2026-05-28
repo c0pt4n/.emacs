@@ -21,3 +21,4 @@
   (global-git-gutter-mode +1))
 
 (provide 'magit-config)
+;;; magit-config.el ends here

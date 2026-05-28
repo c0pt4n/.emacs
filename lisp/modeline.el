@@ -12,3 +12,4 @@
   (doom-modeline-mode 1))
 
 (provide 'modeline)
+;;; modeline.el ends here

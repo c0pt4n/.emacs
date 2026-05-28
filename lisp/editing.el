@@ -4,3 +4,4 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (provide 'editing)
+;;; editing.el ends here

@@ -79,3 +79,4 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
 (provide 'keys)
+;;; keys.el ends here
