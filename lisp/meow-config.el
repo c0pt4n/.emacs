@@ -2,10 +2,6 @@
 
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
-  (meow-motion-define-key
-   '("j" . meow-next)
-   '("k" . meow-prev)
-   '("<escape>" . ignore))
   (meow-leader-define-key
    '("?" . meow-cheatsheet)
 
@@ -58,7 +54,15 @@
    '("9" . meow-digit-argument)
    '("0" . meow-digit-argument)
    '("/" . meow-keypad-describe-key))
-(meow-normal-define-key
+
+  (meow-motion-define-key
+   '("j" . meow-next)
+   '("k" . meow-prev)
+   '("y" . meow-clipboard-save)
+   '("/" . consult-line)
+   '("<escape>" . ignore))
+
+  (meow-normal-define-key
    '("0" . meow-expand-0)
    '("9" . meow-expand-9)
    '("8" . meow-expand-8)
