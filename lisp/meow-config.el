@@ -56,6 +56,7 @@
    '("/" . meow-keypad-describe-key))
 
   (meow-motion-define-key
+   '("x" . meow-line)
    '("j" . meow-next)
    '("k" . meow-prev)
    '("y" . meow-clipboard-save)
