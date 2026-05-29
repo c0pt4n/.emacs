@@ -8,7 +8,7 @@
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
         magit-bury-buffer-function #'magit-restore-window-configuration))
 
-(add-hook 'git-commit-mode-hook #'evil-insert-state)
+(add-hook 'git-commit-mode-hook #'meow-insert)
 
 (with-eval-after-load 'magit
   (define-key magit-status-mode-map (kbd "SPC") nil)
