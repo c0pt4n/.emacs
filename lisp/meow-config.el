@@ -10,7 +10,14 @@
    '("?" . meow-cheatsheet)
 
    '("." . find-file)
+   '("/" . consult-ripgrep)
    '("f r" . consult-recent-file)
+   '("f c" . (lambda () (interactive) (find-file (expand-file-name "init.el" user-emacs-directory))))
+   '("f e" . (lambda () (interactive) (dirvish user-emacs-directory)))
+
+   ;; Projects
+   '("SPC" . project-find-file)
+   '("p R" . project-query-replace-regexp)
 
    ;; Bookmars
    '("b m" . bookmark-set)
@@ -124,6 +131,13 @@
   (meow-setup)
   (meow-global-mode))
 
+;; Window movement
+(global-set-key (kbd "C-<left>")  #'windmove-left)
+(global-set-key (kbd "C-<right>") #'windmove-right)
+(global-set-key (kbd "C-<down>")  #'windmove-down)
+(global-set-key (kbd "C-<up>")    #'windmove-up)
+
+;; Zoom
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
