@@ -116,6 +116,10 @@
 
 (use-package meow
   :demand t
+  :init
+  (setq meow-keypad-meta-prefix ?M)
+  (setq meow-keypad-ctrl-meta-prefix ?G)
+  (setq meow-cursor-type-insert 'box)
   :config
   (meow-setup)
   (meow-global-mode))
