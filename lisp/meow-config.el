@@ -132,6 +132,8 @@
   (setq meow-keypad-ctrl-meta-prefix ?G)
   (setq meow-cursor-type-insert 'box)
   :config
+  (with-eval-after-load 'git-commit
+    (add-hook 'git-commit-mode-hook #'meow-insert-mode))
   (meow-setup)
   (meow-global-mode))
 
