@@ -4,7 +4,6 @@
 (elpaca-wait)
 
 (use-package magit
-  :defer t
   :config
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
         magit-bury-buffer-function #'magit-restore-window-configuration))
