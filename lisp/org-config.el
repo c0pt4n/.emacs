@@ -1,11 +1,13 @@
 ;;; org-config.el -- Description -*- lexical-binding: t; -*-
 
-(setq org-directory "~/docs/notes/org")
-
-(with-eval-after-load 'org
+(use-package org
+  :ensure nil
+  :init
+  (setq org-directory "~/docs/notes/org")
+  :config
   (setq org-edit-src-content-indentation 0
         org-hide-leading-stars           t
-		org-return-follows-link  t)) ;; Setting RETURN key in org-mode to follow links
+		org-return-follows-link          t))
 
 (use-package org-modern
   :hook (org-mode . org-modern-mode)
