@@ -52,8 +52,7 @@
    '("7" . meow-digit-argument)
    '("8" . meow-digit-argument)
    '("9" . meow-digit-argument)
-   '("0" . meow-digit-argument)
-   '("/" . meow-keypad-describe-key))
+   '("0" . meow-digit-argument))
 
   (meow-motion-define-key
    '("x" . meow-line)
