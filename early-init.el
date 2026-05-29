@@ -4,25 +4,20 @@
 
 ;;; Fonts
 (set-face-attribute 'default nil
-					:font "IBM Plex Mono"
+					:family "IBM Plex Mono"
 					:height 120
 					:weight 'regular)
 (set-face-attribute 'variable-pitch nil
-					:font "IBM Plex Sans"
+					:family "IBM Plex Sans"
 					:height 130
 					:weight 'regular)
 (set-face-attribute 'fixed-pitch nil
-					:font "IBM Plex Mono"
+					:family "IBM Plex Mono"
 					:height 120
 					:weight 'regular)
 
-;; Makes commented text and keywords italics.
-;; This is working in emacsclient but not emacs.
-;; Your font must have an italic face available.
-(set-face-attribute 'font-lock-comment-face nil
-					:slant 'italic)
-(set-face-attribute 'font-lock-keyword-face nil
-					:slant 'italic)
+(set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+(set-face-attribute 'font-lock-keyword-face nil :slant 'italic)
 
 ;; This sets the default font on all graphical frames created after restarting Emacs.
 ;; Does the same thing as 'set-face-attribute default' above, but emacsclient fonts
