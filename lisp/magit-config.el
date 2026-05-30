@@ -7,9 +7,7 @@
   :hook (git-commit-mode . meow-insert)
   :config
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
-        magit-bury-buffer-function #'magit-restore-window-configuration))
-
-(with-eval-after-load 'magit
+        magit-bury-buffer-function #'magit-restore-window-configuration)
   (define-key magit-status-mode-map (kbd "p") #'magit-push)
   (define-key magit-status-mode-map (kbd "SPC") nil)
   (define-key magit-log-mode-map (kbd "SPC") nil)
