@@ -7,9 +7,6 @@
 
    '("." . find-file)
    '("/" . consult-ripgrep)
-   '("f r" . consult-recent-file)
-   '("f c" . (lambda () (interactive) (find-file (expand-file-name "init.el" user-emacs-directory))))
-   '("f e" . (lambda () (interactive) (dirvish user-emacs-directory)))
 
    ;; Projects
    '("SPC" . project-find-file)
@@ -28,6 +25,11 @@
 
    '("c c" . compile)
 
+   ;; Files
+   '("f r" . consult-recent-file)
+   '("f c" . (lambda () (interactive) (find-file (expand-file-name "init.el" user-emacs-directory))))
+   '("f e" . (lambda () (interactive) (dirvish user-emacs-directory)))
+
    ;; Magit
    '("g" . (lambda () (interactive) (require 'magit) (magit-status)))
 
@@ -36,10 +38,16 @@
    '("o T" . vterm)
    '("o d" . dirvish)
 
+   ;; Org
+   '("C" . org-capture)
+   '("n r i" . org-roam-capture)
+   '("n r f" . org-roam-node-find)
+   '("n j" . org-roam-dailies-capture-today)
+
    ;; Window bindings
    '("w v" . split-window-right)
    '("w s" . split-window-below)
-   '("w d" . delete-window)
+   '("w c" . delete-window)
    '("w o" . delete-other-windows)
 
    ;; Use SPC (0-9) for digit arguments.
