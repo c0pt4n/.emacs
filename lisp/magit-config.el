@@ -4,11 +4,10 @@
 (elpaca-wait)
 
 (use-package magit
+  :hook (git-commit-mode . meow-insert)
   :config
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
         magit-bury-buffer-function #'magit-restore-window-configuration))
-
-(add-hook 'git-commit-mode-hook #'meow-insert)
 
 (with-eval-after-load 'magit
   (define-key magit-status-mode-map (kbd "p") #'magit-push)
