@@ -49,6 +49,10 @@
    '("w s" . split-window-below)
    '("w c" . delete-window)
    '("w o" . delete-other-windows)
+   '("w l" . windmove-right)
+   '("w k" . windmove-up)
+   '("w j" . windmove-down)
+   '("w h" . windmove-left)
 
    ;; Use SPC (0-9) for digit arguments.
    '("1" . meow-digit-argument)
