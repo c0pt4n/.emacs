@@ -22,6 +22,7 @@
    '("b b" . switch-to-buffer)
    '("b n" . next-buffer)
    '("b i" . ibuffer)
+   '("b r" . revert-buffer)
 
    '("c c" . compile)
 
