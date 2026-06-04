@@ -78,12 +78,6 @@
 (global-hl-line-mode 1)
 (column-number-mode 1)
 (global-auto-revert-mode 1)
-;; The following prevents <> from auto-pairing when electric-pair-mode is on.
-;; Otherwise, org-tempo is broken when you try to <s TAB...
-(add-hook 'org-mode-hook (lambda ()
-						   (setq-local electric-pair-inhibit-predicate
-									   `(lambda (c)
-										  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 
 (setq scroll-margin 8
 	  display-line-numbers-type 'relative
