@@ -9,6 +9,7 @@
   :config
   (setq org-edit-src-content-indentation 0
         org-hide-leading-stars           t
+		org-indent-mode                  t
 		org-return-follows-link          t))
 
 (with-eval-after-load 'org
