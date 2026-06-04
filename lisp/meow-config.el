@@ -126,7 +126,7 @@
    '("R" . meow-swap-grab)
    '("s" . meow-kill)
    '("t" . meow-till)
-   '("u" . meow-undo)
+   '("u" . undo-tree-undo)
    '("U" . meow-undo-in-selection)
    '("v" . meow-visit)
    '("w" . meow-mark-word)
@@ -160,6 +160,9 @@
 ;; Zoom
 (global-set-key (kbd "C-=") #'text-scale-increase)
 (global-set-key (kbd "C--") #'text-scale-decrease)
+
+;; Save
+(global-set-key (kbd "C-r") #'undo-tree-redo)
 
 (provide 'meow-config)
 ;;; meow-config.el ends here
