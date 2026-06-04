@@ -2,6 +2,8 @@
 
 (use-package org
   :ensure nil
+  :hook
+  (org-mode . display-line-numbers-mode)
   :init
   (setq org-directory "~/docs/notes/org")
   :config
