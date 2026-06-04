@@ -158,8 +158,8 @@
 (global-set-key (kbd "C-<up>")    #'windmove-up)
 
 ;; Zoom
-(global-set-key (kbd "C-=") 'text-scale-increase)
-(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "C-=") #'text-scale-increase)
+(global-set-key (kbd "C--") #'text-scale-decrease)
 
 (provide 'meow-config)
 ;;; meow-config.el ends here
