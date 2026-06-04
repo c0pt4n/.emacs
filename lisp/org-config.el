@@ -11,6 +11,12 @@
         org-hide-leading-stars           t
 		org-return-follows-link          t))
 
+(with-eval-after-load 'org
+  (require 'org-tempo)
+  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  (add-to-list 'org-structure-template-alist '("go" . "src go"))
+  (add-to-list 'org-structure-template-alist '("sh" . "src sh")))
+
 (use-package org-modern
   :hook (org-mode . org-modern-mode)
   :init
