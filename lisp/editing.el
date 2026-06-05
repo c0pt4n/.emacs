@@ -10,6 +10,12 @@
                                 t
                               (electric-pair-conservative-inhibit c)))))))
 
+(use-package python
+  :ensure nil
+  :custom
+  (python-indent-guess-indent-offset nil)
+  (python-indent-offset 4))
+
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
