@@ -78,5 +78,16 @@
   (with-eval-after-load 'org
     (require 'ox-typst)))
 
+(with-eval-after-load 'org
+  (require 'ob-shell)
+  (require 'ob-python)
+  (require 'ob-C)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((shell      . t)
+     (emacs-lisp . t)
+     (python     . t)
+     (C          . t))))
+
 (provide 'org-config)
 ;;; org-config.el ends here
