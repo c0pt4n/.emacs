@@ -140,5 +140,6 @@
 (require 'editing)
 (require 'development)
 (require 'persist)
+(require 'markdown)
 ;; (require 'emms-config)
 ;; (require 'workspaces)
