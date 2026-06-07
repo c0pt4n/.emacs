@@ -141,5 +141,6 @@
 (require 'development)
 (require 'persist)
 (require 'markdown)
+(require 'tramp-config)
 ;; (require 'emms-config)
 ;; (require 'workspaces)
