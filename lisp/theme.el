@@ -3,9 +3,11 @@
 (use-package catppuccin-theme
   :ensure (catppuccin-theme :host github :repo "catppuccin/emacs" :files ("*.el"))
   :init
-  (load-theme 'catppuccin :no-confirm)
-  (setq catppuccin-flavor 'macchiato) ;; or 'latte, 'macchiato, or 'mocha
-  (catppuccin-reload))
+  (setq catppuccin-flavor 'macchiato)) ;; or 'latte, 'macchiato, or 'mocha
+
+(use-package tron-legacy-theme
+  :init
+  (load-theme 'tron-legacy t))
 
 (provide 'theme)
 ;;; theme.el ends here
