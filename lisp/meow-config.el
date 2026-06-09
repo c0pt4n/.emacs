@@ -36,7 +36,7 @@
    '("g" . (lambda () (interactive) (require 'magit) (magit-status)))
 
    ;; Toggling keybindings
-   '("o t" . vterm-toggle)
+   '("o t" . om/vterm)
    '("o T" . vterm)
    '("o d" . dirvish)
 
