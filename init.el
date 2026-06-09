@@ -66,6 +66,9 @@
 		no-littering-var-directory "~/.local/share/emacs/"))
 (elpaca-wait)
 
+(when (file-exists-p custom-file)
+  (load custom-file))
+
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode)
