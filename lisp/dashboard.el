@@ -6,6 +6,7 @@
   (float-time (time-subtract after-init-time before-init-time)))
 
 (defun om-dashboard-render ()
+  (interactive)
   (let ((buf (get-buffer-create om-dashboard-buffer)))
     (with-current-buffer buf
       (let* ((inhibit-read-only t)
