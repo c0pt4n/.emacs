@@ -26,6 +26,9 @@
 
    '("c c" . compile)
 
+   '("e g" . gptel)
+   '("e s" . gptel-send)
+
    ;; Files
    '("f r" . consult-recent-file)
    '("f c" . (lambda () (interactive) (find-file (expand-file-name "init.el" user-emacs-directory))))
