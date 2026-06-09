@@ -128,7 +128,7 @@
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 
 (require 'meow-config)
-(require 'dashboard-setup)
+(require 'dashboard)
 (require 'modeline)
 (require 'dired-setup)
 (require 'vterm-config)
