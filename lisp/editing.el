@@ -10,6 +10,13 @@
                                 t
                               (electric-pair-conservative-inhibit c)))))))
 
+(use-package paren
+  :ensure nil
+  :init
+  (setq show-paren-delay 0
+		show-paren-when-point-inside-paren t
+		show-paren-when-point-in-periphery t))
+
 (use-package python
   :ensure nil
   :custom
