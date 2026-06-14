@@ -146,6 +146,7 @@
 (require 'markdown)
 (require 'tramp-config)
 (require 'llms)
+(require 'pass-config)
 (require 'everywhere)
 ;; (require 'emms-config)
 ;; (require 'workspaces)
